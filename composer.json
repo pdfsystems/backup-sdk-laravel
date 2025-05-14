@@ -42,8 +42,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Pdfsystems\\Backup\\Tests\\": "tests/",
-      "Workbench\\App\\": "workbench/app/"
+      "Pdfsystems\\Backup\\Tests\\": "tests/"
     }
   },
   "scripts": {
