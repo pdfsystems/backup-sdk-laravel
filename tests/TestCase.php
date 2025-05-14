@@ -2,7 +2,6 @@
 
 namespace Pdfsystems\Backup\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Pdfsystems\Backup\BackupServiceProvider;
 
