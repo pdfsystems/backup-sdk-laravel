@@ -3,6 +3,7 @@
 namespace Pdfsystems\Backup;
 
 use Pdfsystems\BackupSdk\BackupClient;
+use Pdfsystems\BackupSdk\Drivers\LaravelDriver;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -26,8 +27,11 @@ class BackupServiceProvider extends PackageServiceProvider
 
         $this->app->singleton('pdf-backup-client', function () {
             return new BackupClient(
-                config('pdf-backup.token'),
-                config('pdf-backup.base_url')
+                new LaravelDriver(
+                    $this->app,
+                    config('pdf-backup.base_url'),
+                    config('pdf-backup.token'),
+                )
             );
         });
     }
